@@ -1,0 +1,4 @@
+page\NewAccountPage.class
+page\BasePage.class
+page\DashboardPage.class
+page\LoginPage.class
