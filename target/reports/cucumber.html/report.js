@@ -10,15 +10,15 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "name": "User enters the \"\u003cusername\u003e\" in the username field",
+  "name": "User enters the \"\u003cusername\u003e\" in the \"username\" field",
   "keyword": "When "
 });
 formatter.step({
-  "name": "User enters the \"\u003cpassword\u003e\" in the password field",
+  "name": "User enters the \"\u003cpassword\u003e\" in the \"password\" field",
   "keyword": "When "
 });
 formatter.step({
-  "name": "User clicks on login",
+  "name": "User clicks on \"login\"",
   "keyword": "And "
 });
 formatter.step({
@@ -26,39 +26,39 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.step({
-  "name": "User clicks on bank cash",
+  "name": "User clicks on \"bankCash\"",
   "keyword": "And "
 });
 formatter.step({
-  "name": "User clicks on new account",
+  "name": "User clicks on \"newAccount\"",
   "keyword": "And "
 });
 formatter.step({
-  "name": "User enters \"\u003caccountTitle\u003e\" in the account title field in accounts page",
+  "name": "User enters \"\u003caccountTitle\u003e\" in the \"accountTitle\" field in accounts page",
   "keyword": "And "
 });
 formatter.step({
-  "name": "User enters \"\u003cdescription\u003e\" in the description field in accounts page",
+  "name": "User enters \"\u003cdescription\u003e\" in the \"description\" field in accounts page",
   "keyword": "And "
 });
 formatter.step({
-  "name": "User enters \"\u003cinitialBalance\u003e\" in the initial balance field in accounts page",
+  "name": "User enters \"\u003cinitialBalance\u003e\" in the \"initialBalance\" field in accounts page",
   "keyword": "And "
 });
 formatter.step({
-  "name": "User enters \"\u003caccountNumber\u003e\" in the account number field in accounts page",
+  "name": "User enters \"\u003caccountNumber\u003e\" in the \"accountNumber\" field in accounts page",
   "keyword": "And "
 });
 formatter.step({
-  "name": "User enters \"\u003ccontactPerson\u003e\" in the contact person field in accounts page",
+  "name": "User enters \"\u003ccontactPerson\u003e\" in the \"contactPerson\" field in accounts page",
   "keyword": "And "
 });
 formatter.step({
-  "name": "User enters \"\u003cPhone\u003e\" in the phone field in accounts page",
+  "name": "User enters \"\u003cPhone\u003e\" in the \"Phone\" field in accounts page",
   "keyword": "And "
 });
 formatter.step({
-  "name": "User clicks on submit",
+  "name": "User clicks on \"submit\"",
   "keyword": "And "
 });
 formatter.step({
@@ -73,38 +73,24 @@ formatter.examples({
     {
       "cells": [
         "username",
-        "",
         "password",
-        "",
         "accountTitle",
-        "",
         "description",
-        "",
         "initialBalance",
-        "",
         "accountNumber",
-        "",
         "contactPerson",
-        "",
         "Phone"
       ]
     },
     {
       "cells": [
         "demo@techfios.com",
-        "",
         "abc123",
-        "",
         "Bamboo Title",
-        "",
         "Bamboo Deposit",
-        "",
         "10000",
-        "",
         "963696369",
-        "",
         "Anup",
-        "",
         "0123456789"
       ]
     }
@@ -131,31 +117,31 @@ formatter.scenario({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "name": "User enters the \"demo@techfios.com\" in the username field",
+  "name": "User enters the \"demo@techfios.com\" in the \"username\" field",
   "keyword": "When "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_enters_the_in_the_username_field(java.lang.String)"
+  "location": "step.LoginStepDefinition.user_enters_the_in_the_field(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters the \"abc123\" in the password field",
+  "name": "User enters the \"abc123\" in the \"password\" field",
   "keyword": "When "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_enters_the_in_the_password_field(java.lang.String)"
+  "location": "step.LoginStepDefinition.user_enters_the_in_the_field(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks on login",
+  "name": "User clicks on \"login\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_clicks_on_login()"
+  "location": "step.LoginStepDefinition.user_clicks_on_login(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -171,91 +157,91 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks on bank cash",
+  "name": "User clicks on \"bankCash\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_clicks_on_bank_cash()"
+  "location": "step.LoginStepDefinition.user_clicks_on_login(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks on new account",
+  "name": "User clicks on \"newAccount\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_clicks_on_new_account()"
+  "location": "step.LoginStepDefinition.user_clicks_on_login(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters \"Bamboo Title\" in the account title field in accounts page",
+  "name": "User enters \"Bamboo Title\" in the \"accountTitle\" field in accounts page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_enters_in_the_account_title_field_in_accounts_page(java.lang.String)"
+  "location": "step.LoginStepDefinition.user_enters_in_the_field_in_accounts_page(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters \"Bamboo Deposit\" in the description field in accounts page",
+  "name": "User enters \"Bamboo Deposit\" in the \"description\" field in accounts page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_enters_in_the_description_field_in_accounts_page(java.lang.String)"
+  "location": "step.LoginStepDefinition.user_enters_in_the_field_in_accounts_page(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters \"10000\" in the initial balance field in accounts page",
+  "name": "User enters \"10000\" in the \"initialBalance\" field in accounts page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_enters_in_the_initial_balance_field_in_accounts_page(java.lang.String)"
+  "location": "step.LoginStepDefinition.user_enters_in_the_field_in_accounts_page(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters \"963696369\" in the account number field in accounts page",
+  "name": "User enters \"963696369\" in the \"accountNumber\" field in accounts page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_enters_in_the_account_number_field_in_accounts_page(java.lang.String)"
+  "location": "step.LoginStepDefinition.user_enters_in_the_field_in_accounts_page(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters \"Anup\" in the contact person field in accounts page",
+  "name": "User enters \"Anup\" in the \"contactPerson\" field in accounts page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_enters_in_the_contact_person_field_in_accounts_page(java.lang.String)"
+  "location": "step.LoginStepDefinition.user_enters_in_the_field_in_accounts_page(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters \"0123456789\" in the phone field in accounts page",
+  "name": "User enters \"0123456789\" in the \"Phone\" field in accounts page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_enters_in_the_phone_field_in_accounts_page(java.lang.String)"
+  "location": "step.LoginStepDefinition.user_enters_in_the_field_in_accounts_page(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks on submit",
+  "name": "User clicks on \"submit\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step.LoginStepDefinition.user_clicks_on_submit()"
+  "location": "step.LoginStepDefinition.user_clicks_on_login(java.lang.String)"
 });
 formatter.result({
   "status": "passed"

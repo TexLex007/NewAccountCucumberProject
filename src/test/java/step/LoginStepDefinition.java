@@ -28,74 +28,72 @@ public class LoginStepDefinition {
 		driver = BasePage.setup();
 	}
 
-	@When("User enters the {string} in the username field")
-	public void user_enters_the_in_the_username_field(String userName) {
-		beforeRun();
-		loginPage.insertUserName(userName);
+	@When("User enters the {string} in the {string} field")
+	public void user_enters_the_in_the_field(String value, String field) {
+		switch (field) {
+		case "username":
+			beforeRun();
+			loginPage.insertUserName(value);
+			break;
+		case "password":
+			loginPage.insertPassword(value);
+			break;
+		}
 	}
 
-	@When("User enters the {string} in the password field")
-	public void user_enters_the_in_the_password_field(String password) {
-		loginPage.insertPassword(password);
-	}
-
-	@When("User clicks on login")
-	public void user_clicks_on_login() {
-		loginPage.clickLoginButton();
+	@When("User clicks on {string}")
+	public void user_clicks_on_login(String field) {
+		switch (field) {
+		case "login":
+			loginPage.clickLoginButton();
+			break;
+		case "bankCash":
+			dashboardPage.clickOnBankCash();
+			break;
+		case "newAccount":
+			dashboardPage.clickOnNewAccount();
+			break;
+		case "submit":
+			newAccountPage.clickSubmitButton();
+			break;
+		}
 	}
 
 	@Then("User should land on Dashboard page")
 	public void user_should_land_on_Dashboard_page() {
+		dashboardPage.verifyDashboard();
 
 	}
 
-	@Then("User clicks on bank cash")
-	public void user_clicks_on_bank_cash() throws InterruptedException {
-		dashboardPage.clickOnBankCash();
-	}
+	@Then("User enters {string} in the {string} field in accounts page")
+	public void user_enters_in_the_field_in_accounts_page(String value, String field) {
+		switch (field) {
 
-	@Then("User clicks on new account")
-	public void user_clicks_on_new_account() {
-		dashboardPage.clickOnNewAccount();
-	}
+		case "accountTitle":
+			newAccountPage.insertAccountTitle(value + BasePage.generateRandomNum(999));
+			break;
+		case "description":
+			newAccountPage.insertDescription(value + BasePage.generateRandomNum(999));
+			break;
+		case "initialBalance":
+			newAccountPage.insertBalance(value + BasePage.generateRandomNum(999));
+			break;
+		case "accountNumber":
+			newAccountPage.insertAccountNumber(value + BasePage.generateRandomNum(999));
+			break;
+		case "contactPerson":
+			newAccountPage.insertContactPerson(value + BasePage.generateRandomNum(999));
+			break;
+		case "Phone":
+			newAccountPage.insertPhone(value + BasePage.generateRandomNum(999));
+			break;
 
-	@Then("User enters {string} in the account title field in accounts page")
-	public void user_enters_in_the_account_title_field_in_accounts_page(String accountTitle) {
-		newAccountPage.insertAccountTitle(accountTitle + BasePage.generateRandomNum(999));
-	}
-
-	@Then("User enters {string} in the description field in accounts page")
-	public void user_enters_in_the_description_field_in_accounts_page(String description) {
-		newAccountPage.insertDescription(description + BasePage.generateRandomNum(999));
-	}
-
-	@Then("User enters {string} in the initial balance field in accounts page")
-	public void user_enters_in_the_initial_balance_field_in_accounts_page(String initialBalance) {
-		newAccountPage.insertBalance(initialBalance + BasePage.generateRandomNum(999));
-	}
-
-	@Then("User enters {string} in the account number field in accounts page")
-	public void user_enters_in_the_account_number_field_in_accounts_page(String accountNumber) {
-		newAccountPage.insertAccountNumber(accountNumber + BasePage.generateRandomNum(999));
-	}
-
-	@Then("User enters {string} in the contact person field in accounts page")
-	public void user_enters_in_the_contact_person_field_in_accounts_page(String contactPerson) {
-		newAccountPage.insertContactPerson(contactPerson + BasePage.generateRandomNum(999));
-	}
-
-	@Then("User enters {string} in the phone field in accounts page")
-	public void user_enters_in_the_phone_field_in_accounts_page(String phone) {
-		newAccountPage.insertPhone(phone + BasePage.generateRandomNum(999));
-	}
-
-	@Then("User clicks on submit")
-	public void user_clicks_on_submit() {
-		newAccountPage.clickSubmitButton();
+		}
 	}
 
 	@Then("User should be able to validate account created successfully")
 	public void user_should_be_able_to_validate_account_created_successfully() {
+		newAccountPage.validateAccountCreated();
 		BasePage.scrollToBottom();
 		BasePage.takeScrnShot(driver);
 		afterRun();

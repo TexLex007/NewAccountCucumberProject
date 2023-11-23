@@ -1,5 +1,6 @@
 package page;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,8 @@ public class NewAccountPage {
 	@FindBy(how = How.XPATH, using = "//input[@id='contact_phone']")
 	WebElement PHONE_ELEMENT;
 	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Submit']") WebElement SUBMIT_BUTTON_ELEMENT;
+	@FindBy(how = How.XPATH, using = "//div[@class='alert alert-success fade in']") WebElement VALIDATE_ACCOUNT_CREATED_ELEMENT;
+	
 
 	public void insertAccountTitle(String accountTitle) {
 		ACCOUNT_TITLE_ELEMENT.sendKeys(accountTitle);
@@ -52,6 +55,15 @@ public class NewAccountPage {
 	
 	public void clickSubmitButton() {
 		SUBMIT_BUTTON_ELEMENT.click();
+	}
+	
+	public void validateAccountCreated() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		Assert.assertTrue("Dashboard Page not found",VALIDATE_ACCOUNT_CREATED_ELEMENT.getText().contains("Account Created Successfully"));
 	}
 
 }
